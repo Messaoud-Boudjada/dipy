@@ -56,6 +56,7 @@ cdef void step_to_boundary(double *point, double *direction,
 
     smallest_step += overstep
     for i in range(3):
+        ## we can use also range kutta 4'th order instead of Euler
         point[i] += smallest_step * direction[i]
 
 
@@ -73,6 +74,7 @@ cdef void fixed_step(double *point, double *direction, double stepsize) nogil:
 
     """
     for i in range(3):
+        ## we can use also range kutta 4'th order instead of Euler
         point[i] += direction[i] * stepsize
 
 
